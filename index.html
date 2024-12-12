@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Track Info</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Conteneur principal */
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Titre */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Champ de recherche */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        /* Bouton de recherche */
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1DB954;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1ed760;
+        }
+
+        /* Information sur la chanson */
+        #track-info {
+            margin-top: 20px;
+        }
+
+        #track-info h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        #track-info p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        #track-info p span {
+            font-weight: bold;
+        }
+
+        /* Genres de l'artiste */
+        #artist-genres {
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Playlists associées */
+        #playlists {
+            color: #1DB954;
+            font-weight: bold;
+        }
+
+        /* Message d'alerte */
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Image du genre */
+        #genre-images img {
+            width: 100px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche une chanson</h1>
+        <input type="text" id="track-search" placeholder="Rechercher une chanson" aria-label="Rechercher une chanson">
+        <button onclick="searchTrack()" aria-label="Rechercher la chanson">Rechercher</button>
+
+        <div id="track-info" style="display: none;">
+            <h2 id="track-name"></h2>
+            <p id="release-date"><span>Date de sortie:</span> <span id="release-date-value"></span></p>
+            <p id="artist-name"><span>Artiste:</span> <span id="artist-name-value"></span></p>
+            <p id="artist-genres"><span>Genres:</span> <span id="artist-genres-value"></span></p>
+            <div id="genre-images">
+                <img id="genre-image" src="" alt="Genre Image">
+            </div>
+        </div>
+        <p class="alert" id="error-message" style="display:none;">Une erreur est survenue, veuillez réessayer.</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
