@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection Spotify</title>
+    <script>
+        // Fonction pour extraire les paramètres de l'URL (comme le token d'accès)
+        function getAccessTokenFromUrl() {
+            const params = new URLSearchParams(window.location.hash.substring(1));
+            return params.get('access_token');
+        }
+
+        // Vérifie la présence du token et redirige vers l'application principale
+        window.onload = function() {
+            const accessToken = getAccessTokenFromUrl();
+            if (accessToken) {
+                // Si le token est trouvé, redirige vers la page principale avec le token
+                window.location.href = `index.html#access_token=${accessToken}`;
+            } else {
+                // Si aucun token n'est trouvé, affiche un message d'erreur
+                document.getElementById('error-message').style.display = 'block';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirection...</h1>
+    <p id="error-message" style="display: none; color: red;">Erreur: Aucun token trouvé. Veuillez réessayer.</p>
+</body>
+</html>
