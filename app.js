@@ -1,6 +1,6 @@
 const CLIENT_ID = '3315620a5af04acc8f6e37443af97180';  // Remplace par ton client_id
 const CLIENT_SECRET = 'cd4e8e7f43844ec6896fef6ef557a572';  // Remplace par ton client_secret
-const REDIRECT_URI = 'http://localhost:8000/callback';  // URI de redirection pour les tests locaux
+const REDIRECT_URI = 'https://avivacuisinescagnes.github.io/musical/callback';  // URI de redirection pour les tests locaux
 
 let accessToken = '';
 
